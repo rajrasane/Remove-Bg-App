@@ -26,19 +26,4 @@ def upload_file():
 
 
 if __name__ == '__main__':
-    import socket
-    port = 5100
-    try:
-        # Try to bind to port 5100 to check if it's available
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            s.bind(("0.0.0.0", port))
-            s.close()
-        app.run(host='0.0.0.0', debug=True, port=port)
-    except OSError:
-        # If port 5000 is busy, use a dynamic port
-        print("Port 5100 is busy, using a dynamic port.")
-        from werkzeug.serving import make_server
-        server = make_server('0.0.0.0', 0, app)
-        actual_port = server.server_port
-        print(f"App running on port  http://127.0.0.1:{actual_port}")
-        server.serve_forever()
+    app.run(host='0.0.0.0', port=5000, debug=True)
