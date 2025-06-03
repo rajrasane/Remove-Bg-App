@@ -1,3 +1,6 @@
 flask
 rembg
 pillow
+werkzeug
+onnxruntime
+opencv-python-headless
