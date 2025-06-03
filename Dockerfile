@@ -1,7 +1,7 @@
 FROM python:3.9
 
 # Avoid unnecessary model downloads
-COPY u2net.onnx /home/.u2net/u2net.onnx
+COPY u2net.onnx /root/.u2net/u2net.onnx
 
 WORKDIR /app
 
