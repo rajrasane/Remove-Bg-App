@@ -19,11 +19,8 @@ def upload_file():
             img_io = BytesIO()
             output_image.save(img_io, 'PNG')
             img_io.seek(0)
-            # return send_file(img_io, mimetype='image/png')  # Change download in separatre browser tab
             return send_file(img_io, mimetype='image/png', as_attachment=True, download_name='_rmbg.png')
     return render_template('index.html')
 
-
-
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=False)
